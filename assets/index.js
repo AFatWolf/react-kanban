@@ -72,6 +72,11 @@ render(
     onColumnRename={console.log}
     onCardRemove={console.log}
     initialBoard={board}
-  />,
+    allowAddCard={{ on: "top" }}
+    onNewCardConfirm={draftCard => ({
+      id: new Date().getTime(),
+      ...draftCard
+    })}
+  >{board}</Board>,
   document.getElementById('app')
 )

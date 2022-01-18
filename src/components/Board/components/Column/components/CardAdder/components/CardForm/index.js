@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { when } from '@services/utils'
 import DatePicker from "react-datepicker";
 
@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 function CardForm({ onConfirm, onCancel }) {
   const inputCardTitle = useRef()
   const inputCardDescription = useRef()
+  // const inputCardDeadline = useRef()
   const [inputCardDeadline, setInputCardDeadline] = useState(new Date());
 
   function addCard(event) {
@@ -18,6 +19,7 @@ function CardForm({ onConfirm, onCancel }) {
 
   return (
     <div className='react-kanban-card-adder-form'>
+      <p>Change 1</p>
       <form onSubmit={addCard}>
         <input
           className='react-kanban-card-adder-form__title'
@@ -32,7 +34,13 @@ function CardForm({ onConfirm, onCancel }) {
           defaultValue='Description'
           ref={inputCardDescription}
         />
-        <label for="deadline" className='react-kanban-card-adder-form__deadline__header'>Deadline</label>
+        {/* <input
+          className='react-kanban-card-adder-form__deadline'
+          name='deadline'
+          defaultValue={new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/')}
+          ref={inputCardDeadline}
+        /> */}
+        <label htmlFor="deadline" className='react-kanban-card-adder-form__deadline__header'>Deadline</label>
         <DatePicker
           className='react-kanban-card-adder-form__deadline'
           name='deadline'

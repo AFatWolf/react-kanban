@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "files": [
     "dist/index.js",
-    "dist/styles.css"
+    "dist/styles.css",
+    "dist/index.css",
+    "dist/styles.js"
   ],
   "repository": "https://github.com/asseinfo/react-kanban",
   "author": "Leandro Lourenci",
@@ -63,7 +65,8 @@
     "typescript": "4.0.5",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "xvfb": "^0.4.0"
   },
   "scripts": {
     "prepare": "npm run prepublishOnly",
