@@ -19,7 +19,6 @@ function CardForm({ onConfirm, onCancel }) {
 
   return (
     <div className='react-kanban-card-adder-form'>
-      <p>Change 1</p>
       <form onSubmit={addCard}>
         <input
           className='react-kanban-card-adder-form__title'
@@ -34,13 +33,7 @@ function CardForm({ onConfirm, onCancel }) {
           defaultValue='Description'
           ref={inputCardDescription}
         />
-        {/* <input
-          className='react-kanban-card-adder-form__deadline'
-          name='deadline'
-          defaultValue={new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/')}
-          ref={inputCardDeadline}
-        /> */}
-        <label htmlFor="deadline" className='react-kanban-card-adder-form__deadline__header'>Deadline</label>
+        <label htmlFor="deadline" className='react-kanban-card-adder-form__deadline__header'>Deadline: </label>
         <DatePicker
           className='react-kanban-card-adder-form__deadline'
           name='deadline'
